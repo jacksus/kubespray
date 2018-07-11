@@ -43,11 +43,16 @@ kube_users:
     role: admin
     groups:
       - system:masters
+  jack:
+    pass: "thisP@ssw0r6MustBeChanged"
+    role: admin
+    groups:
+      - system:masters
 
 ## It is possible to activate / deactivate selected authentication methods (basic auth, static token auth)
 #kube_oidc_auth: false
-#kube_basic_auth: false
-#kube_token_auth: false
+kube_basic_auth: true
+kube_token_auth: true
 
 
 ## Variables for OpenID Connect Configuration https://kubernetes.io/docs/admin/authentication/
@@ -70,7 +75,7 @@ kube_network_plugin: calico
 # weave's network password for encryption
 # if null then no network encryption
 # you can use --extra-vars to pass the password in command line
-weave_password: EnterPasswordHere
+weave_password: ThisP@ssw0r6MustBeChanged
 
 # Weave uses consensus mode by default
 # Enabling seed mode allow to dynamically add or remove hosts
